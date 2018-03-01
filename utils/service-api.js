@@ -14,51 +14,66 @@ http.globalAgent.options.keepAlive = true;
 
 //GET
 async function getLibraryByReferenceIdAndUserId_v1( requestObject ) {
-  var requestObject2 = createRequestObject( {
-    method : 'GET',
-    url : `${ SERVICE_ENDPOINT.LIBRARY }/v1.0`,
-    qs : {
-      referenceId : requestObject.pratilipiId
-    },
-    headers : {
-      'User-Id' : requestObject.userId,
-      'Service-Version' : requestObject.serviceVersion
-    }
-  }, requestObject );
-  responseObject2 = await forwardRequest( requestObject2 );
-  return responseObject2;
+  try{
+    var requestObject2 = createRequestObject( {
+      method : 'GET',
+      url : `${ SERVICE_ENDPOINT.LIBRARY }/v1.0`,
+      qs : {
+        referenceId : requestObject.pratilipiId
+      },
+      headers : {
+        'User-Id' : requestObject.userId,
+        'Service-Version' : requestObject.serviceVersion
+      }
+    }, requestObject );
+    responseObject2 = await forwardRequest( requestObject2 );
+    return responseObject2;
+  } catch( error ) {
+    console.error( 'Error : getLibraryByReferenceIdAndUserId_v1 : ' + error );
+    throw error;
+  }
 }
 
 async function getPratilipiByIdBatch_v1( requestObject ) {
-  var requestObject2 = createRequestObject( {
-    method : 'GET',
-    url : `${ SERVICE_ENDPOINT.PRATILIPI }/metadata`,
-    qs : {
-      id : requestObject.pratilipiId
-    },
-    headers : {
-      'User-Id' : requestObject.userId,
-      'Service-Version' : requestObject.serviceVersion
-    }
-  }, requestObject );
-  responseObject2 = await forwardRequest( requestObject2 );
-  return responseObject2;
+  try{
+    var requestObject2 = createRequestObject( {
+      method : 'GET',
+      url : `${ SERVICE_ENDPOINT.PRATILIPI }/metadata`,
+      qs : {
+        id : requestObject.pratilipiId
+      },
+      headers : {
+        'User-Id' : requestObject.userId,
+        'Service-Version' : requestObject.serviceVersion
+      }
+    }, requestObject );
+    responseObject2 = await forwardRequest( requestObject2 );
+    return responseObject2;
+  } catch( error ) {
+    console.error( 'Error : getPratilipiByIdBatch_v1 : ' + error );
+    throw error;
+  }
 }
 
 async function getPratilipiBySlugBatch_v1( requestObject ) {
-  var requestObject2 = createRequestObject( {
-    method : 'GET',
-    url : `${ SERVICE_ENDPOINT.PRATILIPI }/metadata`,
-    qs : {
-      slug : requestObject.slug
-    },
-    headers : {
-      'User-Id' : requestObject.userId,
-      'Service-Version' : requestObject.serviceVersion
-    }
-  }, requestObject );
-  responseObject2 = await forwardRequest( requestObject2 );
-  return responseObject2;
+  try{
+    var requestObject2 = createRequestObject( {
+      method : 'GET',
+      url : `${ SERVICE_ENDPOINT.PRATILIPI }/metadata`,
+      qs : {
+        slug : requestObject.slug
+      },
+      headers : {
+        'User-Id' : requestObject.userId,
+        'Service-Version' : requestObject.serviceVersion
+      }
+    }, requestObject );
+    responseObject2 = await forwardRequest( requestObject2 );
+    return responseObject2;
+  } catch( error ) {
+    console.error( 'Error : getPratilipiBySlugBatch_v1 : ' + error );
+    throw error;
+  }
 }
 
 async function getUserPratilipiByIdBatch_v1( requestObject ) {
@@ -83,55 +98,70 @@ async function getUserPratilipiByIdBatch_v1( requestObject ) {
 }
 
 async function getAuthorByIdBatch_v1( requestObject ) {
-  var requestObject2 = createRequestObject( {
-    method : 'GET',
-    url : `${ SERVICE_ENDPOINT.AUTHOR }/meta_data`,
-    qs : {
-      id : requestObject.authorIds,
-      includeState : 'DELETED'
-    },
-    headers : {
-      'User-Id' : requestObject.userId,
-      'Service-Version' : requestObject.serviceVersion
-    }
-  }, requestObject );
-  responseObject2 = await forwardRequest( requestObject2 );
-  return responseObject2;
+  try{
+    var requestObject2 = createRequestObject( {
+      method : 'GET',
+      url : `${ SERVICE_ENDPOINT.AUTHOR }/meta_data`,
+      qs : {
+        id : requestObject.authorIds,
+        includeState : 'DELETED'
+      },
+      headers : {
+        'User-Id' : requestObject.userId,
+        'Service-Version' : requestObject.serviceVersion
+      }
+    }, requestObject );
+    responseObject2 = await forwardRequest( requestObject2 );
+    return responseObject2;
+  } catch( error ) {
+    console.error( 'Error : getAuthorByIdBatch_v1 : ' + error );
+    throw error;
+  }
 }
 
 async function getSocialReviewCountByPratilipiIdBatch_v2( requestObject ) {
-  var requestObject2 = createRequestObject( {
-    method : 'GET',
-    url : `${ SERVICE_ENDPOINT.SOCIAL }/v2.0/reviews/count`,
-    qs : {
-      referenceId : requestObject.pratilipiId,
-      referenceType : 'pratilipis'
-    },
-    headers : {
-      'User-Id' : requestObject.userId,
-      'Service-Version' : requestObject.serviceVersion
-    }
-  }, requestObject );
-  responseObject2 = await forwardRequest( requestObject2 );
-  return responseObject2;
+  try{
+    var requestObject2 = createRequestObject( {
+      method : 'GET',
+      url : `${ SERVICE_ENDPOINT.SOCIAL }/v2.0/reviews/count`,
+      qs : {
+        referenceId : requestObject.pratilipiId,
+        referenceType : 'pratilipis'
+      },
+      headers : {
+        'User-Id' : requestObject.userId,
+        'Service-Version' : requestObject.serviceVersion
+      }
+    }, requestObject );
+    responseObject2 = await forwardRequest( requestObject2 );
+    return responseObject2;
+  } catch( error ) {
+    console.error( 'Error : getSocialReviewCountByPratilipiIdBatch_v2 : ' + error );
+    throw error;
+  }
 }
 
 async function getAuthByPratilipiIdBatch_v1( requestObject ) {
-  var requestObject2 = createRequestObject( {
-    method : 'GET',
-    url : `${ SERVICE_ENDPOINT.AUTH }/isAuthorized`,
-    qs : {
-      method : 'PATCH',
-      resource : '/pratilipis',
-      id : requestObject.pratilipiId
-    },
-    headers : {
-      'User-Id' : requestObject.userId,
-      'Service-Version' : requestObject.serviceVersion
-    }
-  }, requestObject );
-  responseObject2 = await forwardRequest( requestObject2 );
-  return responseObject2;
+  try{
+    var requestObject2 = createRequestObject( {
+      method : 'GET',
+      url : `${ SERVICE_ENDPOINT.AUTH }/isAuthorized`,
+      qs : {
+        method : 'PATCH',
+        resource : '/pratilipis',
+        id : requestObject.pratilipiId
+      },
+      headers : {
+        'User-Id' : requestObject.userId,
+        'Service-Version' : requestObject.serviceVersion
+      }
+    }, requestObject );
+    responseObject2 = await forwardRequest( requestObject2 );
+    return responseObject2;
+  } catch( error ) {
+    console.error( 'Error : getAuthByPratilipiIdBatch_v1 : ' + error );
+    throw error;
+  }
 }
 
 async function forwardRequest( options ) {

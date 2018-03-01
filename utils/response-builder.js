@@ -42,8 +42,8 @@ function getPratilipi_v1( data ) {
     dataObject.averageRating = data.socialData.data[ index ].averageRating;
     dataObject.hasAccessToUpdate = data.authData.data[ index ].isAuthorized;
     dataObject.addedToLib = data.libraryData.data[ index ].addedToLib;
-    if (data.userPratilipi[dataObject.pratilipiId]) {
-      dataObject.userPratilipi = data.userPratilipi[dataObject.pratilipiId];
+    if (data.userPratilipiData[dataObject.pratilipiId]) {
+      dataObject.userPratilipi = data.userPratilipiData[dataObject.pratilipiId];
     }
     data.dataArray.push( dataObject );
   }
