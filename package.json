@@ -1,0 +1,24 @@
+{
+  "name": "benchmark-go-node-python",
+  "version": "1.0.0",
+  "description": "Service to benchmark language for Web Routing",
+  "main": "client-router.js",
+  "scripts": {
+    "start": "node client-router.js"
+  },
+  "dependencies": {
+    "body-parser": "1",
+    "express": "4",
+    "lodash": "4",
+    "morgan": "1",
+    "request": "2",
+    "request-promise": "4",
+    "socket.io": "2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pratilipi/benchmark-go-node-python.git"
+  },
+  "author": "GRS",
+  "license": "ISC"
+}
