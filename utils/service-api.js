@@ -103,8 +103,7 @@ async function getAuthorByIdBatch_v1( requestObject ) {
       method : 'GET',
       url : `${ SERVICE_ENDPOINT.AUTHOR }/meta_data`,
       qs : {
-        id : requestObject.authorIds,
-        includeState : 'DELETED'
+        id : requestObject.authorId
       },
       headers : {
         'User-Id' : requestObject.userId,
