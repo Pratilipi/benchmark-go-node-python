@@ -33,19 +33,17 @@ RUN apt-get clean
 # Set env variables
 ENV UV_THREADPOOL_SIZE=128
 
-# exposing port
-EXPOSE 80
-
 # Copying nginx config files
 COPY config/service.nginx.conf /etc/nginx/servers/ecs-service
 COPY config/container.nginx.conf /etc/nginx/nginx.conf
 
 COPY utils utils
 COPY config config
-COPY . .
-
-
-WORKDIR /benchmark-go-node-python
+COPY requirements.txt requirements.txt
+COPY start.sh start.sh
 
 #install dependencies
 RUN pip install -q -r requirements.txt
+
+# exposing port
+EXPOSE 80
