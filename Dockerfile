@@ -43,3 +43,9 @@ COPY config/container.nginx.conf /etc/nginx/nginx.conf
 COPY utils utils
 COPY config config
 COPY . .
+
+
+WORKDIR /benchmark-go-node-python
+
+#install dependencies
+RUN pip install -q -r requirements.txt
