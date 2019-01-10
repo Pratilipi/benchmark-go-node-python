@@ -40,8 +40,6 @@ EXPOSE 80
 COPY config/service.nginx.conf /etc/nginx/servers/ecs-service
 COPY config/container.nginx.conf /etc/nginx/nginx.conf
 
-COPY package.json .
-RUN npm install
-
+COPY utils utils
+COPY config config
 COPY . .
-
