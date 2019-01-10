@@ -40,6 +40,7 @@ COPY config/container.nginx.conf /etc/nginx/nginx.conf
 COPY utils utils
 COPY config config
 COPY requirements.txt requirements.txt
+COPY worker.py worker.py
 COPY start.sh start.sh
 
 #install dependencies

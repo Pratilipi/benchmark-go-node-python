@@ -1,1 +1,1 @@
-python utils/worker.py
+python worker.py
