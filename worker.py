@@ -28,7 +28,7 @@ table = dynamodb.Table('user_pratilipi')
 def pushEventToDB(msg):
     data = msg["data"]
     pratilipi_id = msg["pratilipiId"]
-    date = data["readTime"].strftime("%d-%m-%Y %H:%M:%S")
+    date = datetime.fromtimestamp(data["readTime"]).strftime("%d-%m-%Y %H:%M:%S")
     item = {
         'userId': int(data['userId']),
         'pratilipiId': int(pratilipi_id),
