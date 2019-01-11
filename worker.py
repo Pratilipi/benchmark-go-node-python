@@ -13,7 +13,7 @@ SCHEMA_REGISTRY_URL = conf.KAFKA_CONFIG["schema.registry.url"]
 
 c = AvroConsumer({
     'bootstrap.servers': KAFKA_BROKER_URL,
-    'group.id': 'testGrp',
+    'group.id': 'testGrp_2',
     'schema.registry.url': SCHEMA_REGISTRY_URL})
 
 c.subscribe(['userPratilipiEventAggregated'])
